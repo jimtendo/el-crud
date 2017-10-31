@@ -213,13 +213,19 @@ If you plan on using a custom component on the Create or Edit component, you mus
 
 Component to display the Rows in a table.
 
+See [List.vue](src/List.vue) for a list of available parameters.
+
 ### ElEdit
 
 Component to display the Edit Form.
 
+See [Edit.vue](src/Edit.vue) for a list of available parameters.
+
 ### ElCreate
 
 Component to display the Create Form.
+
+See [Create.vue](src/Create.vue) for a list of available parameters.
 
 ## Badges
 
