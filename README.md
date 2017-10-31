@@ -2,6 +2,13 @@
 
 CRUD components for Element-UI (Vue).
 
+This is intended for use with Laravel's Resource Controllers:
+
+https://laravel.com/docs/5.5/controllers#resource-controllers
+
+However, it may be used in other HTTP applications if the same endpoints are implemented.
+
+
 ## Installation
 
 ```
@@ -11,7 +18,7 @@ $ npm install element-ui-crud --save
 
 ## Components
 
-Element-UI CRUD is designed to be modular so that each component can be used on its own.
+Element-UI CRUD is designed to be modular so that each component can be used on its own if desired.
 
 ### ElCrud
 
