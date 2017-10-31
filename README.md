@@ -53,123 +53,142 @@ The primary component that provides full CRUD functionality.
 #### Parameters
 
 - endpoint
-    **Type:** string
-    **Example:** "/api/users"
-    **Description:**
-    The root HTTP REST endpoint of your backend that provides CRUD functionality.
-    Note that this should implement the same endpoints as Laravel's Resource Controller.
+
+  The root HTTP REST endpoint of your backend that provides CRUD functionality.
+  Note that this should implement the same endpoints as Laravel's Resource Controller.
+  
+  - **Type:** string
+  - **Example:** "/api/users"
 
 - primary-key (optional)
-    **Type:** string
-    **Default:** "id"
-    **Example:** "id"
-    **Description:**
-    The primary key to use on the List component.
+
+  The primary key to use on the List component.
+  
+	- **Type:** string
+    - **Default:** "id"
+    - **Example:** "id"
+    
 
 - list
-    **Type:** array
-    **Example:** ["id", "name"]
-    **Description:**
+
     Fields that should be shown on the List component.
+    
+    - **Type:** array
+    - **Example:** ["id", "name"]
 
 - create
-    **Type:** array
-    **Example:** ["name"]
-    **Description:**
+
     Fields that should be shown on the Create component.
     If not specified, create functionality will not be offered.
+    
+    - **Type:** array
+    - **Example:** ["name"]
 
 - edit
-    **Type:** array
-    **Example:** ["name"]
-    **Description:**
+
     Fields that should be shown on the Edit component.
     If not specified, edit functionality will not be offered.
+    
+    - **Type:** array
+    - **Example:** ["name"]
 
 - edit
-    **Type:** array
-    **Example:** ["name"]
-    **Description:**
+
     Fields that should be shown on the Edit component.
     If not specified, edit functionality will not be offered.
+    
+    - **Type:** array
+    - **Example:** ["name"]
 
 - show-delete
-    **Type:** boolean
-    **Default:** true
-    **Example:** true
-    **Description:**
-    Whether "Delete" should be shown next to items in row.
+
+	Whether "Delete" should be shown next to items in row.
+    
+    - **Type:** boolean
+    - **Default:** true
+    - **Example:** true
 
 - show-refresh
-    **Type:** boolean
-    **Default:** true
-    **Example:** true
-    **Description:**
-    Whether "Refresh" button should be shown above table.
+
+	Whether "Refresh" button should be shown above table.
+    
+    - **Type:** boolean
+    - **Default:** true
+    - **Example:** true
 
 - titles
-    **Type:** Object
-    **Example:** { id: 'ID', name: 'Name' }
-    **Description:**
+
     Titles to apply to List Columns and Create/Edit Forms.
     If not provided, the key for that column is used.
+
+    - **Type:** Object
+    - **Example:** { id: 'ID', name: 'Name' }
 
 - order (TODO)
-    **Type:** Object
-    **Example:** { id: 'ID', name: 'Name' }
-    **Description:**
+
     Titles to apply to List Columns and Create/Edit Forms.
     If not provided, the key for that column is used.
 
+    - **Type:** Object
+    - **Example:** { id: 'ID', name: 'Name' }
+
 - params
-    **Type:** Object
-    **Example:** { level: 'admin' }
-    **Description:**
+
     Extra parameters that should be passed with every request.
     Can be used for filtering the results server-side.
+
+    - **Type:** Object
+    - **Example:** { level: 'admin' }
 
 - fields (TODO)
-    **Type:** Object
-    **Example:** { level: 'admin' }
-    **Description:**
+
     Extra parameters that should be passed with every request.
     Can be used for filtering the results server-side.
 
+    - **Type:** Object
+    - **Example:** { level: 'admin' }
+
 - after
-    **Type:** function
-    **Example:** function(entity) { this.$store.dispatch('refreshUsers'); }
-    **Description:**
+
     Function to perform after Create/Edit.
     For example, after a edit is performed, you might wish to update a VueX store.
+    
+    - **Type:** function
+    - **Example:** function(entity) { this.$store.dispatch('refreshUsers'); }
 
 - pagination
-    **Type:** integer
-    **Default:** 0
-    **Example:** 50
-    **Description:**
+
     If set, Pagination will be enabled. This must be handled server-side.
     (TODO)
+    
+    - **Type:** integer
+    - **Default:** 0
+    - **Example:** 50
 
 - create-size
-    **Type:** string
-    **Default:** "small"
-    **Example:** "large"
-    **Description:**
+	
     Size of the Create Dialog.
 
+    - **Type:** string
+    - **Default:** "small"
+    - **Example:** "large"
+
 - edit-size
-    **Type:** string
-    **Default:** "small"
-    **Example:** "large"
-    **Description:**
-    Size of the Edit Dialog.
+
+	Size of the Edit Dialog.
+
+    - **Type:** string
+    - **Default:** "small"
+    - **Example:** "large"
 
 - delete-size
-    **Type:** string
-    **Default:** "tiny"
-    **Example:** "small"
-    **Description:**
-    Size of the Delete Dialog.
+
+	Size of the Delete Dialog.
+
+    - **Type:** string
+    - **Default:** "tiny"
+    - **Example:** "small"
+    
 
 ### ElList
 
