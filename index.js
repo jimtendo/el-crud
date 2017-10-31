@@ -5,11 +5,12 @@ import ElCrud from './src/ElCrud';
 import ElList from './src/List';
 import ElShow from './src/Show';
 
+export default ElCrud;
+
 export {
   ElCreate,
   ElDelete,
   ElEdit,
-  ElCrud,
   ElList,
   ElShow,
 }
