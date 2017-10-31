@@ -11,8 +11,27 @@ However, it may be used in other HTTP applications if the same endpoints are imp
 
 ## Installation
 
+Requires:
+
 ```
-$ npm install element-ui-crud --save
+npm install axios --save
+npm install vue --save
+npm install element-ui --save
+```
+
+Install:
+
+```
+npm install element-ui-crud --save
+```
+
+Configuration:
+
+You must set Axios as your $http library:
+
+```
+import Axios from 'axios'
+Vue.prototype.$http = Axios;
 ```
 
 
