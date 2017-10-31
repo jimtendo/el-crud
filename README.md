@@ -22,7 +22,7 @@ The primary component that provides full CRUD functionality.
 ```vue
 <template>
     <div>
-        <h1>IDX - Dataflows</h1>
+        <h1>Users</h1>
         <hr/>
         
         <el-crud endpoint="/api/users"
@@ -62,8 +62,6 @@ The primary component that provides full CRUD functionality.
   
 	- **Type:** string
     - **Default:** "id"
-    - **Example:** "id"
-    
 
 - list
 
@@ -88,21 +86,12 @@ The primary component that provides full CRUD functionality.
     - **Type:** array
     - **Example:** ["name"]
 
-- edit
-
-    Fields that should be shown on the Edit component.
-    If not specified, edit functionality will not be offered.
-    
-    - **Type:** array
-    - **Example:** ["name"]
-
 - show-delete
 
 	Whether "Delete" should be shown next to items in row.
     
     - **Type:** boolean
     - **Default:** true
-    - **Example:** true
 
 - show-refresh
 
@@ -110,7 +99,6 @@ The primary component that provides full CRUD functionality.
     
     - **Type:** boolean
     - **Default:** true
-    - **Example:** true
 
 - titles
 
