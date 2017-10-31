@@ -5,8 +5,8 @@
             <template>
               <slot name="buttons"></slot>
             </template>
-            <el-button v-if="create.length" type="primary" icon="document" v-on:click="setAction('create')">Create</el-button>
-            <el-button v-if="showRefresh" type="primary" v-on:click="$refs.list.fetchData();"><i class="fa fa-refresh" aria-hidden="true"></i></el-button>
+            <el-button v-if="create.length" type="primary" icon="el-icon-document" v-on:click="setAction('create')">Create</el-button>
+            <el-button v-if="showRefresh" type="primary" icon="el-icon-refresh" v-on:click="$refs.list.fetchData();"></el-button>
           </el-button-group>
         </div>
         
@@ -20,13 +20,13 @@
               :pagination="pagination"
               :selectable="selectable"
               :row-class-name="rowClassName">
-          <template v-for="column in list" :slot="column" scope="scope">
+          <template v-for="column in list" :slot="column" slot-scope="scope">
             <slot :name="'list.'+column" :row="scope.row">{{ fromDotNotation(scope.row, column) }}</slot>
           </template>
-          <template scope="scope">
+          <template slot-scope="scope">
             <slot name="list" :row="scope.row"></slot>
-            <el-button v-if="edit.length" size="small" type="primary" v-on:click="setAction('edit', scope.row[primaryKey])" icon="edit"></el-button>
-            <el-button v-if="showDelete" size="small" type="danger" v-on:click="setAction('delete', scope.row[primaryKey])" icon="delete"></el-button>
+            <el-button v-if="edit.length" size="small" type="primary" v-on:click="setAction('edit', scope.row[primaryKey])" icon="el-icon-edit"></el-button>
+            <el-button v-if="showDelete" size="small" type="danger" v-on:click="setAction('delete', scope.row[primaryKey])" icon="el-icon-delete"></el-button>
           </template>
         </List>
         
@@ -41,7 +41,7 @@
         -->
         
         <el-dialog v-if="action === 'create'" title="Create" :visible="action === 'create'" :before-close="handleClose"
-                   :size="createSize" :modal-append-to-body="modalAppendToBody">
+                   :width="createSize" :modal-append-to-body="modalAppendToBody">
           <Create :endpoint="endpoint"
                   :columns="create"
                   :titles="titles"
@@ -49,7 +49,7 @@
                   :rules="rules"
                   :params="params"
                   :after="closeAndRefreshList">
-            <template v-for="column in create" :slot="column" scope="scope">
+            <template v-for="column in create" :slot="column" slot-scope="scope">
               <slot :name="'create.'+column" :entity="scope.entity">
                 <el-crud-field :name="column" :fields="fields" :titles="titles" v-model="scope.entity[column]"></el-crud-field>
               </slot>
@@ -58,7 +58,7 @@
         </el-dialog>
         
         <el-dialog v-if="action === 'edit'" title="Edit" :visible="action === 'edit'" :before-close="handleClose"
-                   :size="editSize"  :modal-append-to-body="modalAppendToBody">
+                   :width="editSize"  :modal-append-to-body="modalAppendToBody">
           <Edit ref="edit"
                 :endpoint="endpoint+'/'+entityId"
                 :columns="edit"
@@ -67,7 +67,7 @@
                 :rules="rules"
                 :params="params"
                 :after="closeAndRefreshList">
-            <template v-for="column in edit" :slot="column" scope="scope">
+            <template v-for="column in edit" :slot="column" slot-scope="scope">
               <slot :name="'edit.'+column" :entity="scope.entity">
                 <el-crud-field :name="column" :fields="fields" :titles="titles" v-model="scope.entity[column]"></el-crud-field>
               </slot>
@@ -76,7 +76,7 @@
         </el-dialog>
         
         <el-dialog v-if="action === 'delete'" title="Confirm" :visible="action === 'delete'" :before-close="handleClose"
-                  :size="deleteSize" :modal-append-to-body="modalAppendToBody">
+                  :width="deleteSize" :modal-append-to-body="modalAppendToBody">
           <Delete :endpoint="endpoint+'/'+entityId"
                   :after="closeAndRefreshList">
           </Delete>
@@ -116,9 +116,9 @@
           pagination: { type: Number, default: 0 },
           selectable: { type: Boolean, default: false },
           rowClassName: { type:Function, default: null },
-          createSize: { type: String, default: 'small' },
-          editSize: { type: String, default: 'small' },
-          deleteSize: { type: String, default: 'tiny' },
+          createSize: { type: String, default: '75%' },
+          editSize: { type: String, default: '75%' },
+          deleteSize: { type: String, default: '50%' },
           modalAppendToBody: { type: Boolean, default: true },
         },
         

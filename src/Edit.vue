@@ -75,7 +75,6 @@
                     
                     this.$http.put(this.endpoint, this.entity, { 'params': this.params }).then(response => {
                         this.entity = Object.assign({}, response.data.entity);
-                        this.resetForm();
                         this.$notify.success( {title: 'Success', message: response.data.message });
                         this.loading = false;
                         

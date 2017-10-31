@@ -69,7 +69,6 @@
                     
                     this.$http.post(this.endpoint, this.entity, { 'params': this.params }).then(response => {
                         this.data = response.data;
-                        this.resetForm();
                         this.$notify.success( {title: 'Success', message: response.data.message });
                         this.loading = false;
                         

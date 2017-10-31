@@ -4,12 +4,12 @@
                   v-on:sort-change="handleSortChange" v-on:selection-change="handleSelectionChange" :row-class-name="rowClassName">
           <el-table-column v-if="selectable" type="selection" width="55"></el-table-column>
           <el-table-column v-for="name in columns" :key="name" :prop="name" :label="(titles.hasOwnProperty(name)) ? titles[name] : name" sortable="custom">
-            <template scope="scope">
+            <template slot-scope="scope">
               <slot :name="name" :row="scope.row">{{ fromDotNotation(scope.row, name) }}</slot>
             </template>
           </el-table-column>
           <el-table-column label="Actions" header-align="center" align="right" width="196px">
-            <template scope="scope">
+            <template slot-scope="scope">
               <el-button-group>
                 <slot :row="scope.row"></slot>
               </el-button-group>
