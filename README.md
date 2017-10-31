@@ -126,10 +126,10 @@ The primary component that provides full CRUD functionality.
 - params
 
     Extra parameters that should be passed with every request.
-    Can be used for filtering the results server-side.
+    These will be passed in the query string.
 
     - **Type:** Object
-    - **Example:** { level: 'admin' }
+    - **Example:** { where: 'user.type == "ADMIN' }
 
 - fields (TODO)
 
@@ -150,7 +150,7 @@ The primary component that provides full CRUD functionality.
 - pagination
 
     If set, Pagination will be enabled. This must be handled server-side.
-    (TODO)
+    The "limit" and "offset" parameters will be passed in the Query String.
     
     - **Type:** integer
     - **Default:** 0
@@ -203,9 +203,11 @@ If you plan on using a custom component on the Create or Edit component, you mus
 
 ```vue
 <template slot="edit.data" scope="scope">
-    <editor v-model="scope.entity.data" v-on:init="editorInit();" :mode="{ path:'ace/mode/json' }" theme="chrome" width="100%" height="500"></editor>
+    <code-editor v-model="scope.entity.data"></code-editor>
 </template>
 ```
+
+(Note that the component MUST support the use of v-model for this to work.)
 
 ### ElList
 
