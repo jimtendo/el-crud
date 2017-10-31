@@ -180,6 +180,32 @@ The primary component that provides full CRUD functionality.
     - **Default:** "tiny"
     - **Example:** "small"
     
+#### Over-riding/Customizing Display of Columns
+
+The display of columns can be over-ridden using Vue's Template/Slot system. The general format is "component.columnName". An example is below showing how to over-ride the "id" column in the "List" component.
+
+```vue
+<el-crud endpoint="/api/users"
+          :list="['id', 'name']"
+          :create="['name']"
+          :edit="['name']"
+          :titles="{ 'id': 'ID', 'name': 'Name' }"
+  <template slot="list" scope="scope">
+      <el-button size="small" type="primary" v-on:click="console.log(scope.row)" icon="information"></el-button>
+  </template>
+  <template slot="list.id" scope="scope">
+      ID of user is {{ scope.row['id'] }} 
+  </template>
+</el-crud>
+```
+
+If you plan on using a custom component on the Create or Edit component, you must bind the v-model as below:
+
+```vue
+<template slot="edit.data" scope="scope">
+    <editor v-model="scope.entity.data" v-on:init="editorInit();" :mode="{ path:'ace/mode/json' }" theme="chrome" width="100%" height="500"></editor>
+</template>
+```
 
 ### ElList
 
