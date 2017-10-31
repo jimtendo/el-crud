@@ -9,7 +9,15 @@ $ npm install element-ui-crud --save
 ```
 
 
-## Example Usage
+## Components
+
+Element-UI CRUD is designed to be modular so that each component can be used on its own.
+
+### ElCrud
+
+The primary component that provides full CRUD functionality.
+
+#### Example
 
 ```vue
 <template>
@@ -41,14 +49,6 @@ $ npm install element-ui-crud --save
     }
 </script>
 ```
-
-## Components
-
-Element-UI CRUD is designed to be modular so that each component can be used on its own.
-
-### ElCrud
-
-The primary component that provides full CRUD functionality.
 
 #### Parameters
 
