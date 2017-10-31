@@ -25,15 +25,11 @@ The primary component that provides full CRUD functionality.
         <h1>IDX - Dataflows</h1>
         <hr/>
         
-        <el-crud :endpoint="'/api/users"
-                  primary-key="id"
+        <el-crud endpoint="/api/users"
                   :list="['id', 'name']"
                   :create="['name']"
                   :edit="['name']"
                   :titles="{ 'id': 'ID', 'name': 'Name' }"
-                  :order="{'name': 'ASC'}"
-                  :pagination="50"
-                  :show-refresh="false">
           <template slot="list" scope="scope">
               <el-button size="small" type="primary" v-on:click="alert(scope.row)" icon="information"></el-button>
           </template>
